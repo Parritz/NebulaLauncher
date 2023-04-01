@@ -1,0 +1,16 @@
+.button {
+	width: 125px;
+	height: 45px;
+	font-size: 18px;
+	color: var(--fg-color);
+	padding: 5px;
+	margin: 5px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.button-container {
+	display: flex;
+	justify-content: center;
+}

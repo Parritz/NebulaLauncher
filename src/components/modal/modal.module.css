@@ -1,0 +1,28 @@
+.modal-window {
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -55%);
+	background-color: var(--mg-color);
+	width: 50%;
+	height: 45%;
+	border-radius: 5px;
+}
+
+.title {
+	color: var(--fg-color);
+	text-align: center;
+}
+
+.input {
+	padding: 10px;
+	background: var(--mg2-color);
+	border: none;
+	margin: 5px;
+	color: white;
+}
+
+.input::placeholder {
+	color: var(grey);
+}
