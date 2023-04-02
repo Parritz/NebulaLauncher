@@ -1,6 +1,6 @@
 {
 	"name": "nebulalauncher",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"private": true,
 	"scripts": {
 		"next-start": "cross-env BROWSER=none next dev",

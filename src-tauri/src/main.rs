@@ -45,7 +45,7 @@ async fn download_potatosmp(is_on: bool) -> String {
 		let response = match response_result {
 			Ok(response) => response,
 			Err(_error) => {
-				return ("Request failed, do you have an internet connection? BC0CC19").into()
+				return ("Request failed, do you have an internet connection?").into()
 			}
 		};
 

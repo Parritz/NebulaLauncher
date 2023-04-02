@@ -9,7 +9,7 @@
 	},
 	"package": {
 		"productName": "Nebula Launcher",
-		"version": "0.0.3"
+		"version": "0.0.4"
 	},
 	"tauri": {
 		"allowlist": {
@@ -54,7 +54,7 @@
 		"updater": {
 			"active": true,
 			"endpoints": [
-				"https://gist.githubusercontent.com/Parritz/8decaccabcff9f48c53e59a0d2cb15a4/raw/f259d37ac1d608ed453cea92ed5fc5866ba258fd/PotatoSMP.json"
+				"https://gist.githubusercontent.com/Parritz/8decaccabcff9f48c53e59a0d2cb15a4/raw/PotatoSMP.json"
 			],
 			"windows": {
 				"installMode": "passive"
