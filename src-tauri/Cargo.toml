@@ -1,11 +1,11 @@
 [package]
-name = "Nebula Launcher"
+name = "nebula_launcher"
 version = "0.0.2"
 description = "To-do"
 authors = ["Parritz"]
-license = ""
+license = "MIT"
 repository = ""
-default-run = "app"
+default-run = "nebula_launcher"
 edition = "2021"
 rust-version = "1.59"
 
