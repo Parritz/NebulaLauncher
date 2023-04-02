@@ -23,6 +23,7 @@ body {
 }
 
 nav {
+	height: 100vh;
 	background: var(--mg-color);
 	float: left;
 	flex-grow: 2;

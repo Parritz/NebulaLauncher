@@ -8,5 +8,5 @@ export type TColor = RGB | RGBA | HEX | VAR;
 export type TButton = {
 	text: string;
 	color: TColor;
-	onClick?: MouseEventHandler<HTMLButtonElement>;
+	onClick?: any;
 }

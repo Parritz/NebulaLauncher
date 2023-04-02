@@ -1,13 +1,35 @@
+
+// WARNING:
+// THIS PROJECT IS UNDER **HEAVY, HEAVY, HEAVY* DEVELOPMENT
+// IF YOU AREN'T A POTATO SMP PLAYER, YOU WILL NOT BE GIVEN SUPPORT FOR IT!
+
+import { useState } from "react";
 import Head from "next/head"
 import Image from "next/image"
 import { Inter } from "next/font/google"
 import styles from "@styles/Home.module.css";
+import navStyles from "@components/navbar/navbar.module.css";
+import globalStyles from "@styles/globalLib.module.css";
 
 import Navbar from "@components/navbar";
 import { Modal } from "@components/modal";
+import { Button } from "@components/button";
+
+import { invoke } from '@tauri-apps/api/tauri'
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
+	const [active, setActive] = useState("CurseForge");
+	const [status, setStatus] = useState("");
+
+	function buttonPress() {
+		setStatus("Installing...");
+		invoke("download_potatosmp").then((response) => {
+			const response_string = response as string;
+			setStatus(response_string);
+		})
+	}
+
 	return (
 		<>
 			<Head>
@@ -17,17 +39,67 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<div className={styles["flex-container"]}>
-				<Navbar/>
+			<div className={styles["fullscreen-flex-container"]}>
+				<div id={styles["potato-smp"]}>
+					<h1>Potato SMP</h1>
+					
+					<div className={styles["flex-container-center"]}>
+						<input type="checkbox" id={styles["input-box"]} checked/>
+						<label htmlFor="input-box" id={styles["input-box-label"]}>Include performance-intensive mods</label><br/>
+					</div>
+					<Button onClick={buttonPress}text="Install" color="var(--mg2-color)"></Button>
+					<p>{status}</p>
+				</div>
+				
+			</div>
+			<p id={styles.tempP}>WARNING: This is an alpha, alpha, ALPHA version of MC Mod Manager. It only works to install the Potato SMP X modpack currently.</p>
+				<p id={styles.tempP}>This design is nowhere near final as this is just the bare minimum for this to currently work.</p>
+			
+
+			{/* <div className={globalStyles["flex-container"]}>
+				<nav>
+					<a href="./"><h2>MC Mod Manager</h2></a>
+
+					<h3>Install</h3>
+						<div className={navStyles["flex-container"]}>
+							<ul>
+								<li onClick={() => setActive("CurseForge")}><a>CurseForge</a></li>
+								<li onClick={() => setActive("Modrinth")}><a>Modrinth</a></li>
+								<li onClick={() => setActive("Custom")}><a>Custom</a></li>
+							</ul>
+							
+							{active === "Custom" && <Modal title="Custom" width="200px" height="150px"></Modal>}
+						</div>
+
+						<h3>Create</h3>
+						<p>Coming soon!</p>
+				</nav>
 
 				<div className={styles["window"]}>
+					{
+						active === "CurseForge" &&
+						<div className={styles["flex-container-center"]}>
+							<div className={styles["test-window"]}>
 
+							</div>
+
+							<div className={styles["test-window"]}>
+
+							</div>
+
+							<div className={styles["test-window"]}>
+
+							</div>
+
+							<div className={styles["test-window"]}>
+
+							</div>
+						</div>
+					}
 				</div>
 
-				{/* <div className={styles["sidebar"]}>
-
-				</div> */}
-			</div>
+				{active === "CurseForge" && <div className={styles["sidebar"]}></div>}
+			</div> */}
 		</>
 	)
 }

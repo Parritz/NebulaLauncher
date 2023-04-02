@@ -1,6 +1,20 @@
+.fullscreen-flex-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 85vh;
+	width: 100%;
+	flex-direction: column;
+}
+
 .flex-container {
 	display: flex;
 	height: 100vh;
+}
+
+.flex-container-center {
+	display: flex;
+	justify-content: center;
 }
 
 .window {
@@ -10,4 +24,47 @@
 .sidebar {
 	background-color: black;
 	flex-grow: 25;
+}
+
+.test-window {
+	background-color: black;
+	width: 35%;
+	height: 25%;
+	margin: 10px;
+}
+
+#potato-smp {
+	width: 50vh;
+	height: 50vh;
+	background: var(--mg-color);
+	align-self: center;
+}
+
+#potato-smp h1 {
+	color: var(--fg-color);
+	text-align: center;
+}
+
+#potato-smp p {
+	position: relative;
+	float: inline-end;
+	color: var(--fg-color);
+	text-align: center;
+}
+
+#tempP {
+	height: 5vh;
+	margin-top: 15px;
+}
+
+#input-box {
+	text-align: center;
+	align-self: center;
+}
+
+#input-box-label {
+	color: var(--fg-color);
+	align-self: center;
+	text-align: center;
+	margin-left: 5px;
 }
