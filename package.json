@@ -1,15 +1,15 @@
 {
-	"name": "mcmodmanager",
-	"version": "0.1.0",
+	"name": "nebulalauncher",
+	"version": "0.0.1",
 	"private": true,
 	"scripts": {
 		"next-start": "cross-env BROWSER=none next dev",
 		"next-build": "next build && next export",
 		"tauri": "tauri",
+		"start": "next dev",
 		"build": "tauri build",
 		"dev": "tauri dev",
-		"lint": "next lint",
-		"prepare": "husky install"
+		"lint": "next lint"
 	},
 	"dependencies": {
 		"@tauri-apps/api": "^1.2.0",

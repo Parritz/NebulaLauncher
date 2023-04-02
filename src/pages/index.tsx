@@ -21,10 +21,11 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
 	const [active, setActive] = useState("CurseForge");
 	const [status, setStatus] = useState("");
+	const [isOn, setIsOn] = useState(true);
 
 	function buttonPress() {
 		setStatus("Installing...");
-		invoke("download_potatosmp").then((response) => {
+		invoke("download_potatosmp", { isOn: isOn }).then((response) => {
 			const response_string = response as string;
 			setStatus(response_string);
 		})
@@ -44,7 +45,7 @@ export default function Home() {
 					<h1>Potato SMP</h1>
 					
 					<div className={styles["flex-container-center"]}>
-						<input type="checkbox" id={styles["input-box"]} checked/>
+						<input onChange={() => setIsOn(!isOn)} type="checkbox" id={"hi"} checked={isOn}/>
 						<label htmlFor="input-box" id={styles["input-box-label"]}>Include performance-intensive mods</label><br/>
 					</div>
 					<Button onClick={buttonPress}text="Install" color="var(--mg2-color)"></Button>
@@ -52,8 +53,8 @@ export default function Home() {
 				</div>
 				
 			</div>
-			<p id={styles.tempP}>WARNING: This is an alpha, alpha, ALPHA version of MC Mod Manager. It only works to install the Potato SMP X modpack currently.</p>
-				<p id={styles.tempP}>This design is nowhere near final as this is just the bare minimum for this to currently work.</p>
+			<p id={styles.tempP}>WARNING: This is an alpha, alpha, ALPHA version of the Nebula Launcher. It only works to install the Potato SMP X modpack currently.</p>
+			<p id={styles.tempP}>This design is nowhere near final as this is just the bare minimum for this to currently work.</p>
 			
 
 			{/* <div className={globalStyles["flex-container"]}>

@@ -2,14 +2,14 @@
 	"$schema": "../node_modules/@tauri-apps/cli/schema.json",
 	"build": {
 		"beforeBuildCommand": "npm run next-build",
-		"beforeDevCommand": "npm run next-start",
+		"beforeDevCommand": "npm run start",
 		"devPath": "http://localhost:3000",
 		"distDir": "../out",
 		"withGlobalTauri": true
 	},
 	"package": {
-		"productName": "mcmodmanager",
-		"version": "0.1.0"
+		"productName": "Nebula Launcher",
+		"version": "0.0.1"
 	},
 	"tauri": {
 		"allowlist": {
@@ -30,7 +30,7 @@
 				"icons/icon.icns",
 				"icons/icon.ico"
 			],
-			"identifier": "com.mcmodmanager.dev",
+			"identifier": "com.nebulalauncher.dev",
 			"longDescription": "",
 			"macOS": {
 				"entitlements": null,
@@ -52,13 +52,21 @@
 			"csp": null
 		},
 		"updater": {
-			"active": false
+			"active": true,
+			"endpoints": [
+				"https://gist.githubusercontent.com/Parritz/8decaccabcff9f48c53e59a0d2cb15a4/raw/f259d37ac1d608ed453cea92ed5fc5866ba258fd/PotatoSMP.json"
+			],
+			"windows": {
+				"installMode": "passive"
+			},
+			"dialog": true,
+			"pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDYxQkRBMEMzMzRGMDg0RUIKUldUcmhQQTB3NkM5WVJZOEw4Vm55dmFQd3dXaFNoWk5sVHhlN0c2L0tCbzUvV2g2Snc4THNWcUsK"
 		},
 		"windows": [
 			{
 				"fullscreen": false,
 				"resizable": true,
-				"title": "MC Mod Manager",
+				"title": "Nebula Launcher",
 				"width": 800,
 				"height": 600,
 				"minWidth": 700,
