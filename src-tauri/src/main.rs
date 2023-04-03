@@ -61,7 +61,7 @@ async fn download_potatosmp(is_on: bool) -> String {
 		// TO-DO: This is a horrible way of doing things, but the bare minimum currently is that the project "works."
 		// Cleanup and all of that will happen at a later point.
 		if is_on {
-			let mod_target = target + "/mods/physics-mod-pro-v143-fabric-1.18.2.jar";
+			let mod_target = target + "/mods/physics-mod-pro-v143-forge-1.18.2.jar";
 			let file_exists = Path::new(&mod_target).is_file();
 
 			if file_exists {
