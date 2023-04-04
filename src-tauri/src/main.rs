@@ -40,7 +40,7 @@ async fn download_potatosmp(is_on: bool) -> String {
 		let target = home_dir.to_owned() + "/curseforge/minecraft/instances/PotatoSMP";
 		let has_potatosmp_installed = Path::new(&target).is_dir();
 
-		let zip_target = "https://codeload.github.com/Parritz/PotatoSMP/legacy.zip/main";
+		let zip_target = "https://codeload.github.com/Minecraft-SMPs/PotatoSMP/legacy.zip/main";
 		let response_result = reqwest::get(zip_target).await;
 		let response = match response_result {
 			Ok(response) => response,
