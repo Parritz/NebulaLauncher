@@ -25,7 +25,7 @@ export default function Home() {
 
 	function buttonPress() {
 		setStatus("Installing...");
-		invoke("download_potatosmp", { isOn: isOn }).then((response) => {
+		invoke("download_potatosmp").then((response) => {
 			const response_string = response as string;
 			setStatus(response_string);
 		})
@@ -44,10 +44,10 @@ export default function Home() {
 				<div id={styles["potato-smp"]}>
 					<h1>Potato SMP</h1>
 					
-					<div className={styles["flex-container-center"]}>
+					{/* <div className={styles["flex-container-center"]}>
 						<input onChange={() => setIsOn(!isOn)} type="checkbox" id={"hi"} checked={isOn}/>
 						<label htmlFor="input-box" id={styles["input-box-label"]}>Include performance-intensive mods</label><br/>
-					</div>
+					</div> */}
 					<Button onClick={buttonPress}text="Install" color="var(--mg2-color)"></Button>
 					<p>{status}</p>
 				</div>
